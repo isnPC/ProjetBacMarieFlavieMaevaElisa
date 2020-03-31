@@ -3,3 +3,34 @@ Voici notre projet bac en ISN, en groupe de 4.
 idées; programme pour rébus, présentation grâce à un site web (comment nous avons fait etc)
 thème : jeu du rébus
 aspect images, une case où l'on pourra taper le mot ou la phrase, un calculateur de score ? dans un coin ? (faire un dessin sur feuille puis scanner ou photo)
+
+Une idée du prgramme, des débuts, des brouillons, en python
+import tkinter as tk
+# pour utiliser un objet tkinter on fera précéder le nom par tk.
+
+from random import randint
+
+from PIL import Image, ImageTk
+
+fenetre = tk.Tk()
+fenetre.title("Jeu du rébus")
+
+# on crée un canvas pour pouvoir insérer une photo
+image1 = tk.Canvas(fenetre, width=100,height=100, bg="black")
+image1.grid(row=1, column=1)
+# grace à PIL on insère la photo dans le canvas
+# image redimensionnée grace à paint avec un longueur ou lageur maximale de 100px mais on peut changer ces dimensions
+pilImage1 = Image.open("test1.jpg")
+imag1 = ImageTk.PhotoImage(pilImage1)
+imagesprite1 = image1.create_image(50,50,image=imag1) # les deux 50 correspondent au centre de la photo
+
+image2 = tk.Canvas(fenetre, width=100,height=100, bg="black")
+image2.grid(row=1, column=2)
+pilImage2 = Image.open("test.jpg")
+imag2 = ImageTk.PhotoImage(pilImage2)
+imagesprite2 = image1.create_image(50,50,image=imag2)
+
+quitter = tk.Button(text='Quitter', command = fenetre.destroy)
+quitter.grid(row=2, column=1)
+
+fenetre.mainloop()
