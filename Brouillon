@@ -3,8 +3,9 @@ Voici notre projet bac en ISN, en groupe de 4.
 idées; programme pour rébus, présentation grâce à un site web (comment nous avons fait etc)
 thème : jeu du rébus
 aspect images, une case où l'on pourra taper le mot ou la phrase, un calculateur de score ? dans un coin ? (faire un dessin sur feuille puis scanner ou photo)
+Faire apparaître les règles du jeu ainsi qu'un bouton "commencer" sur la première fenêtre, puis en appuyant sur "commencer", faire apparaître une nouvelle fenêtre, où l'on fera comme sur l'image du premier brouillon, "brouillon.jpg"
 
-Une idée du prgramme, des débuts, des brouillons, en python
+Une idée du programme, des débuts, des brouillons, en python
 import tkinter as tk
 # pour utiliser un objet tkinter on fera précéder le nom par tk.
 
