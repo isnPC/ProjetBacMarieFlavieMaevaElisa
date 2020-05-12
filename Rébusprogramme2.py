@@ -21,8 +21,27 @@ def niveau ():
     else :
         return 2
 
-label = tk.Label(fenetre, text="Jeu du Rébus")
-label.grid()
+def newFenetre():
+    newWindow = tk.Toplevel(fenetre)
+    start = tk.Button(newWindow, text = "Commencer une partie", command = newFenetre)
+    start.grid(row= 7, column=0)
+    indice = tk.Button(newWindow, text='Indices', command = list)
+    indice.grid(row = 6, column = 1)
+    quitter = tk.Button(newWindow, text='Quitter', command = fenetre.destroy)
+    quitter.grid(row = 15, column=0)
+    value = tk.StringVar()
+    value.set("texte par défaut")
+    entree = tk.Entry(newWindow, textvariable=str, width=30)
+    entree.pack()
+
+def mettreImages():
+    if newFenetre is open:
+        start = tk.Button(fenetre, text = "Commencer une partie", command = newFenetre)
+        start.grid(row= 7, column=0)
+        indice = tk.Button(fenetre, text='Indices', command = list)
+        indice.grid(row = 6, column = 1)
+        quitter = tk.Button(fenetre, text='Quitter', command = fenetre.destroy)
+        quitter.grid(row = 15, column=0)
 
 Label1 = tk.Label(fenetre, text ="Bienvenu(e) dans le jeu du rébus ! Le but est simple : à partir de la suite d'images qui vous est montrée, devinez la phrase ou le mot caché en assemblant les syllabes que forment les différentes images. Vous pourrez choisir un niveau entre 3 niveaux;")
 Label1.grid()
@@ -35,9 +54,6 @@ label3.grid()
 
 label4= tk.Label(fenetre, text= "Vous pouvez quitter le jeu en cliquant sur le bouton quitter à tout moment. Bonne chance !")
 label4.grid()
-
-def newFenetre():
-    newWindow = tk.Toplevel(fenetre)
 
 start = tk.Button(fenetre, text = "Commencer une partie", command = newFenetre)
 start.grid(row= 7, column=0)
