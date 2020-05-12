@@ -23,16 +23,14 @@ def niveau ():
 
 def newFenetre():
     newWindow = tk.Toplevel(fenetre)
-    start = tk.Button(newWindow, text = "Commencer une partie", command = newFenetre)
-    start.grid(row= 7, column=0)
     indice = tk.Button(newWindow, text='Indices', command = list)
     indice.grid(row = 6, column = 1)
-    quitter = tk.Button(newWindow, text='Quitter', command = fenetre.destroy)
-    quitter.grid(row = 15, column=0)
     value = tk.StringVar()
     value.set("texte par défaut")
-    entree = tk.Entry(newWindow, textvariable=str, width=30)
-    entree.pack()
+    entree = tk.Entry(newWindow, textvariable=value, width=30)
+    entree.grid()
+    quitter = tk.Button(newWindow, text='Quitter', command = fenetre.destroy)
+    quitter.grid(row = 15, column=0)
 
 def mettreImages():
     if newFenetre is open:
